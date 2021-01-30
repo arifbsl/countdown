@@ -60,11 +60,15 @@ function updateCountdown(e) {
     countdownDate = e.srcElement[1].value;
     console.log(countdownTitle, countdownDate);
 
-    // Get number version of current Date, Update DOM
-    countdownValue = new Date(countdownDate).getTime();
-    console.log(countdownValue);
+    if (countdownDate === '') {
+        alert('Please select a date for the countdown.');
+    } else {
+        // Get number version of current Date, Update DOM
+        countdownValue = new Date(countdownDate).getTime();
+        console.log(countdownValue);
 
-    updateDOM();
+        updateDOM();
+    }
 }
 
 // ReSet all Values
